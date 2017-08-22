@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content%}
+{% if error %}
+<div class="alert alert-danger" role="alert">{{ error }}</div>
+{% endif %}
+{% if user.name == comment.author %}
+<div style="background:white !important" class="jumbotron">
+  <div class="btn-group">
+    <br>
+    <a href="/post/{{ post.key().id() }}/comment/{{ comment.key().id() }}/edit" class="btn btn-primary" role="button">Edit Comment</a>
+    <a href="/post/{{ post.key().id() }}/comment/{{ comment.key().id() }}/delete" class="btn btn-danger" role="button">Delete Comment</a>
+  </div>
+</div>
+{% endif %}
+<h1 class="header-text text-center">{{ comment.author }}</h1>
+<div style="background:white !important" class="jumbotron">
+  <p>{{ comment.content }}</p>
+</div>
+{% endblock %}
