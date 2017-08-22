@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="header-text text-center">Profile</h1>
+<div class="row">
+  <h2 class="text-center">Profile Details</h2>
+  <div class="panel panel-default col-md-6">
+    <div class="panel-heading">
+      <h3 class="panel-title">Name</h3>
+    </div>
+    <div class="panel-body">{{ user.name }}</div>
+  </div>
+  <div class="panel panel-default col-md-6">
+    <div class="panel-heading">
+      <h3 class="panel-title">Email</h3>
+    </div>
+    <div class="panel-body">{{ user.email }}</div>
+  </div>
+</div>
+<div class="row">
+  <h2 class="text-center">Your Posts</h2>
+  {% for post in posts %}
+    <div style="background:white !important" class="jumbotron">
+	<div class="panel-heading">
+	    <h3 class="panel-title">{{ post.title }}</h3>
+	</div>
+	<div class="panel-body">{{ post.content }}</div>
+    </div>
+  {% endfor %}
+  <h2 class="text-center">Your Comments</h2>
+
+  {% for comment in comments %}
+    <div style="background:white !important" class="jumbotron">
+        <div class="panel-body">{{ comment.content }}</div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
