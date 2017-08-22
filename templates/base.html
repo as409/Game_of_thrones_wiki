@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game of thrones - A Demo blog where you can share your Favourite GOT moments</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+</head>
+<body style="background-color:#E6E6FA" background-image" background="http://cdn.pcwallart.com/images/game-of-thrones-logo-vector-wallpaper-3.jpg">
+
+  <div class="container">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">GOT wiki</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user %}
+            <li><a href="/post">New Post</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/signout">Sign Out</a></li>
+            {% else %}
+            <li><a href="/signup">Sign Up</a></li>
+            <li><a href="/signin">Sign In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>
