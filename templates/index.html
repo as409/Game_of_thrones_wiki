@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% if error %}
+<div class="alert alert-danger" role="alert">{{ error }}</div>
+{% endif %}
+<h1>
+  <p align = "center">Welcome to GOT wiki!</p>
+</h1>
+{% for post in posts %}
+<div style="background:white !important" class="jumbotron" >
+  <a href="/post/{{ post.key().id() }}"><h2 style="color:black">{{ post.title }}</h2></a>
+  <hr>
+  <div class="panel-body">{{ post.content }}</div>
+</div>
+
+{% endfor %}
+{% endblock %}
+
+
