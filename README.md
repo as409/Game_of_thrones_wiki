@@ -16,7 +16,7 @@ https://gotwikidemo.appspot.com/
  
 ### Run a development instance
 
-- Run ```dev_appserver.py``` . within the source directory
+- Run ```dev_appserver.py app.yaml``` . within the source directory
 - Go to http://localhost:8080 in your browser
 - Browse the application. Any edits to source files should reload the server automatically.
 
